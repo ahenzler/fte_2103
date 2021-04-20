@@ -44,4 +44,14 @@ class Event
       end
     end
   end
+
+  # def sorted_item_list
+  #   @food_trucks.map do |truck|
+  #     truck.inventory.each do |items|
+  #       items.each do |item|
+  #         item.name
+  #       end
+  #     end
+  #   end.sort
+  # end
 end

@@ -3,7 +3,7 @@ require './lib/item'
 RSpec.describe Item do
   context 'exists' do
     item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
-    item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'}
+    item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
 
     it 'is a item' do
       expect(item1).to be_instance_of(Item)

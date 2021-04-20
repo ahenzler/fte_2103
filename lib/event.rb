@@ -22,4 +22,26 @@ class Event
       truck.inventory.include?(item)
     end
   end
+
+  def total_inventory
+    inventory = Hash.new{|h,k| h[k] = {}}
+    @food_trucks.each do |truck|
+      truck.inventory.each do |item, amount|
+        inventory[item] = {quantity: amount, food_trucks: food_trucks_that_sell(item)}
+      end
+    end
+    inventory
+  end
+
+  def overstocked_items
+    @food_trucks.each do |truck|
+      truck.inventory.each do |items|
+        items.each do |item|
+          if total_inventory[item][:quantity] > 50 && total_inventory[item][:food_trucks].length > 1
+            return [item]
+          end
+        end
+      end
+    end
+  end
 end

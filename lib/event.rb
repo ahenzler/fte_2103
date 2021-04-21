@@ -70,4 +70,14 @@ class Event
   #     end
   #   end.sort
   # end
+
+  def sorted_item_list
+    all_items = total_inventory.keys
+    sorted_items = all_items.sort_by do |item|
+      item.name
+    end
+    sorted_items.map do |item|
+      item.name
+    end
+  end
 end
